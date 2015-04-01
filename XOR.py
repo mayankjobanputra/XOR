@@ -24,8 +24,8 @@ O_A = sigmoid((O_alp*WAalp+O_beta * WAbeta));
 #Error calculation and backpropagation part
 E_A = math.pow((Target - O_A),2)/2;
 #change in weight edge of A, alpha and A, Beta
-dW_Aalp = E_A*O_A*WAalp*O_alp; 
-dW_Abeta = E_A*O_A*WAbeta*O_beta;
+dW_Aalp = (Target-O_A)*O_A*WAalp*O_alp; 
+dW_Abeta = (Target-O_A)*O_A*WAbeta*O_beta;
 #Error calculation for alpha , beta , y ,omg
 E_alp = E_A*WAalp;
 E_beta = E_A*WAbeta;
@@ -70,8 +70,8 @@ while E_A!=0.0000000000:
     E_A = math.pow((Target - O_A),2)/2;
     print E_A;
     #change in weight edge of A, alpha and A, Beta
-    dW_Aalp = E_A*O_A*WAalp*O_alp;
-    dW_Abeta = E_A*O_A*WAbeta*O_beta;
+    dW_Aalp = (Target-O_A)*O_A*WAalp*O_alp;
+    dW_Abeta = (Target-O_A)*O_A*WAbeta*O_beta;
     #
     #Error calculation for alpha , beta , y ,omg
     E_alp = E_A*WAalp;
